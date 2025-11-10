@@ -1,0 +1,612 @@
+{
+  "classic_era": {
+    "period": "1970s-1990s",
+    "games": [
+      {
+        "title": "Space Invaders",
+        "developer": "Taito",
+        "year": 1978,
+        "genre": "Action"
+      },
+      {
+        "title": "Pac-Man",
+        "developer": "Namco",
+        "year": 1980,
+        "genre": "Action"
+      },
+      {
+        "title": "Donkey Kong",
+        "developer": "Nintendo",
+        "year": 1981,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Galaga",
+        "developer": "Namco",
+        "year": 1981,
+        "genre": "Action"
+      },
+      {
+        "title": "Dig Dug",
+        "developer": "Namco",
+        "year": 1982,
+        "genre": "Action"
+      },
+      {
+        "title": "Joust",
+        "developer": "Williams Electronics",
+        "year": 1982,
+        "genre": "Action"
+      },
+      {
+        "title": "Super Mario Bros.",
+        "developer": "Nintendo",
+        "year": 1985,
+        "genre": "Platformer"
+      },
+      {
+        "title": "The Legend of Zelda",
+        "developer": "Nintendo",
+        "year": 1986,
+        "genre": "Adventure"
+      },
+      {
+        "title": "Metroid",
+        "developer": "Nintendo",
+        "year": 1986,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Castlevania",
+        "developer": "Konami",
+        "year": 1986,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Final Fantasy",
+        "developer": "Square",
+        "year": 1987,
+        "genre": "Role-Playing (RPG)"
+      },
+      {
+        "title": "Mega Man",
+        "developer": "Capcom",
+        "year": 1987,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Contra",
+        "developer": "Konami",
+        "year": 1987,
+        "genre": "Action"
+      },
+      {
+        "title": "Super Mario Bros. 3",
+        "developer": "Nintendo",
+        "year": 1988,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Dragon Quest III",
+        "developer": "Chunsoft",
+        "year": 1988,
+        "genre": "Role-Playing (RPG)"
+      },
+      {
+        "title": "Tetris",
+        "developer": "Alexey Pajitnov",
+        "year": 1989,
+        "genre": "Puzzle"
+      },
+      {
+        "title": "SimCity",
+        "developer": "Maxis",
+        "year": 1989,
+        "genre": "Simulation"
+      },
+      {
+        "title": "Super Mario World",
+        "developer": "Nintendo",
+        "year": 1990,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Fire Emblem: Shadow Dragon and the Blade of Light",
+        "developer": "Intelligent Systems",
+        "year": 1990,
+        "genre": "Turn-Based Strategy (TBS)"
+      },
+      {
+        "title": "Sonic the Hedgehog",
+        "developer": "Sonic Team",
+        "year": 1991,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Street Fighter II",
+        "developer": "Capcom",
+        "year": 1991,
+        "genre": "Fighting"
+      },
+      {
+        "title": "The Legend of Zelda: A Link to the Past",
+        "developer": "Nintendo",
+        "year": 1991,
+        "genre": "Adventure"
+      },
+      {
+        "title": "Final Fantasy IV",
+        "developer": "Square",
+        "year": 1991,
+        "genre": "Role-Playing (RPG)"
+      },
+      {
+        "title": "Civilization",
+        "developer": "MicroProse",
+        "year": 1991,
+        "genre": "Turn-Based Strategy (TBS)"
+      },
+      {
+        "title": "Wolfenstein 3D",
+        "developer": "id Software",
+        "year": 1992,
+        "genre": "First-Person Shooter (FPS)"
+      },
+      {
+        "title": "Mortal Kombat",
+        "developer": "Midway",
+        "year": 1992,
+        "genre": "Fighting"
+      },
+      {
+        "title": "Dune II",
+        "developer": "Westwood Studios",
+        "year": 1992,
+        "genre": "Strategy (RTS)"
+      },
+      {
+        "title": "The Legend of Zelda: Link's Awakening",
+        "developer": "Nintendo",
+        "year": 1993,
+        "genre": "Adventure"
+      },
+      {
+        "title": "Super Metroid",
+        "developer": "Nintendo",
+        "year": 1994,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Donkey Kong Country",
+        "developer": "Rare",
+        "year": 1994,
+        "genre": "Platformer"
+      },
+      {
+        "title": "EarthBound",
+        "developer": "Ape/HAL Laboratory",
+        "year": 1994,
+        "genre": "Role-Playing (RPG)"
+      },
+      {
+        "title": "Chrono Trigger",
+        "developer": "Square",
+        "year": 1995,
+        "genre": "Role-Playing (RPG)"
+      },
+      {
+        "title": "Yoshi's Island",
+        "developer": "Nintendo",
+        "year": 1995,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Pokémon Red/Blue",
+        "developer": "Game Freak",
+        "year": 1996,
+        "genre": "Role-Playing (RPG)"
+      },
+      {
+        "title": "Super Mario RPG",
+        "developer": "Square",
+        "year": 1996,
+        "genre": "Role-Playing (RPG)"
+      },
+      {
+        "title": "Metal Slug",
+        "developer": "Nazca Corporation",
+        "year": 1996,
+        "genre": "Action"
+      },
+      {
+        "title": "Castlevania: Symphony of the Night",
+        "developer": "Konami",
+        "year": 1997,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Final Fantasy VII",
+        "developer": "Square",
+        "year": 1997,
+        "genre": "Role-Playing (RPG)"
+      },
+      {
+        "title": "StarCraft",
+        "developer": "Blizzard Entertainment",
+        "year": 1998,
+        "genre": "Strategy (RTS)"
+      },
+      {
+        "title": "Age of Empires II",
+        "developer": "Ensemble Studios",
+        "year": 1999,
+        "genre": "Strategy (RTS)"
+      }
+    ]
+  },
+  "modern_pixel_art_renaissance": {
+    "period": "2000s-2020s",
+    "games": [
+      {
+        "title": "Advance Wars",
+        "developer": "Intelligent Systems",
+        "year": 2001,
+        "genre": "Turn-Based Strategy (TBS)"
+      },
+      {
+        "title": "Golden Sun",
+        "developer": "Camelot Software Planning",
+        "year": 2001,
+        "genre": "Role-Playing (RPG)"
+      },
+      {
+        "title": "Metroid Fusion",
+        "developer": "Nintendo",
+        "year": 2002,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Final Fantasy Tactics Advance",
+        "developer": "Square",
+        "year": 2003,
+        "genre": "Turn-Based Strategy (TBS)"
+      },
+      {
+        "title": "Cave Story",
+        "developer": "Studio Pixel",
+        "year": 2004,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Spelunky",
+        "developer": "Derek Yu",
+        "year": 2008,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Minecraft",
+        "developer": "Mojang",
+        "year": 2009,
+        "genre": "Sandbox"
+      },
+      {
+        "title": "Super Meat Boy",
+        "developer": "Team Meat",
+        "year": 2010,
+        "genre": "Platformer"
+      },
+      {
+        "title": "VVVVVV",
+        "developer": "Terry Cavanagh",
+        "year": 2010,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Terraria",
+        "developer": "Re-Logic",
+        "year": 2011,
+        "genre": "Sandbox"
+      },
+      {
+        "title": "The Binding of Isaac",
+        "developer": "Edmund McMillen",
+        "year": 2011,
+        "genre": "Action"
+      },
+      {
+        "title": "To the Moon",
+        "developer": "Freebird Games",
+        "year": 2011,
+        "genre": "Adventure"
+      },
+      {
+        "title": "Superbrothers: Sword & Sworcery EP",
+        "developer": "Capybara Games",
+        "year": 2011,
+        "genre": "Adventure"
+      },
+      {
+        "title": "FTL: Faster Than Light",
+        "developer": "Subset Games",
+        "year": 2012,
+        "genre": "Strategy (RTS)"
+      },
+      {
+        "title": "Hotline Miami",
+        "developer": "Dennaton Games",
+        "year": 2012,
+        "genre": "Action"
+      },
+      {
+        "title": "Mark of the Ninja",
+        "developer": "Klei Entertainment",
+        "year": 2012,
+        "genre": "Stealth"
+      },
+      {
+        "title": "Fez",
+        "developer": "Polytron Corporation",
+        "year": 2012,
+        "genre": "Puzzle"
+      },
+      {
+        "title": "Papers, Please",
+        "developer": "Lucas Pope",
+        "year": 2013,
+        "genre": "Puzzle"
+      },
+      {
+        "title": "Risk of Rain",
+        "developer": "Hopoo Games",
+        "year": 2013,
+        "genre": "Action"
+      },
+      {
+        "title": "Rogue Legacy",
+        "developer": "Cellar Door Games",
+        "year": 2013,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Gunpoint",
+        "developer": "Suspicious Developments",
+        "year": 2013,
+        "genre": "Puzzle"
+      },
+      {
+        "title": "Shovel Knight",
+        "developer": "Yacht Club Games",
+        "year": 2014,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Kero Blaster",
+        "developer": "Studio Pixel",
+        "year": 2014,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Axiom Verge",
+        "developer": "Thomas Happ",
+        "year": 2015,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Undertale",
+        "developer": "Toby Fox",
+        "year": 2015,
+        "genre": "Role-Playing (RPG)"
+      },
+      {
+        "title": "Broforce",
+        "developer": "Free Lives",
+        "year": 2015,
+        "genre": "Action"
+      },
+      {
+        "title": "Nuclear Throne",
+        "developer": "Vlambeer",
+        "year": 2015,
+        "genre": "Action"
+      },
+      {
+        "title": "Crypt of the NecroDancer",
+        "developer": "Brace Yourself Games",
+        "year": 2015,
+        "genre": "Action"
+      },
+      {
+        "title": "The Escapists",
+        "developer": "Mouldy Toof Studios",
+        "year": 2015,
+        "genre": "Puzzle"
+      },
+      {
+        "title": "Titan Souls",
+        "developer": "Acid Nerve",
+        "year": 2015,
+        "genre": "Action"
+      },
+      {
+        "title": "Downwell",
+        "developer": "Ojiro Fumoto",
+        "year": 2015,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Environmental Station Alpha",
+        "developer": "Arvi Teikari",
+        "year": 2015,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Stardew Valley",
+        "developer": "ConcernedApe",
+        "year": 2016,
+        "genre": "Simulation"
+      },
+      {
+        "title": "Enter the Gungeon",
+        "developer": "Dodge Roll",
+        "year": 2016,
+        "genre": "Action"
+      },
+      {
+        "title": "Owlboy",
+        "developer": "D-Pad Studio",
+        "year": 2016,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Hyper Light Drifter",
+        "developer": "Heart Machine",
+        "year": 2016,
+        "genre": "Action"
+      },
+      {
+        "title": "Salt and Sanctuary",
+        "developer": "Ska Studios",
+        "year": 2016,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Darkest Dungeon",
+        "developer": "Red Hook Studios",
+        "year": 2016,
+        "genre": "Turn-Based Strategy (TBS)"
+      },
+      {
+        "title": "Momodora: Reverie Under the Moonlight",
+        "developer": "Bombservice",
+        "year": 2016,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Crawl",
+        "developer": "Powerhoof",
+        "year": 2017,
+        "genre": "Action"
+      },
+      {
+        "title": "Celeste",
+        "developer": "Maddy Makes Games",
+        "year": 2018,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Dead Cells",
+        "developer": "Motion Twin",
+        "year": 2018,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Moonlighter",
+        "developer": "Digital Sun",
+        "year": 2018,
+        "genre": "Action"
+      },
+      {
+        "title": "Crosscode",
+        "developer": "Radical Fish Games",
+        "year": 2018,
+        "genre": "Action"
+      },
+      {
+        "title": "Into the Breach",
+        "developer": "Subset Games",
+        "year": 2018,
+        "genre": "Turn-Based Strategy (TBS)"
+      },
+      {
+        "title": "The Messenger",
+        "developer": "Sabotage Studio",
+        "year": 2018,
+        "genre": "Platformer"
+      },
+      {
+        "title": "Iconoclasts",
+        "developer": "Joakim Sandberg",
+        "year": 2018,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Wizard of Legend",
+        "developer": "Contingent99",
+        "year": 2018,
+        "genre": "Action"
+      },
+      {
+        "title": "Timespinner",
+        "developer": "Lunar Ray Games",
+        "year": 2018,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Death's Gambit",
+        "developer": "White Rabbit",
+        "year": 2018,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Chasm",
+        "developer": "Bit Kid",
+        "year": 2018,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Katana ZERO",
+        "developer": "Askiisoft",
+        "year": 2019,
+        "genre": "Action"
+      },
+      {
+        "title": "Blasphemous",
+        "developer": "The Game Kitchen",
+        "year": 2019,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Wargroove",
+        "developer": "Chucklefish",
+        "year": 2019,
+        "genre": "Turn-Based Strategy (TBS)"
+      },
+      {
+        "title": "Slay the Spire",
+        "developer": "MegaCrit",
+        "year": 2019,
+        "genre": "Turn-Based Strategy (TBS)"
+      },
+      {
+        "title": "A Short Hike",
+        "developer": "adamgryu",
+        "year": 2019,
+        "genre": "Adventure"
+      },
+      {
+        "title": "Forager",
+        "developer": "HopFrog",
+        "year": 2019,
+        "genre": "Sandbox"
+      },
+      {
+        "title": "Carrion",
+        "developer": "Phobia Game Studio",
+        "year": 2020,
+        "genre": "Metroidvania"
+      },
+      {
+        "title": "Streets of Rage 4",
+        "developer": "Dotemu",
+        "year": 2020,
+        "genre": "Action"
+      },
+      {
+        "title": "Noita",
+        "developer": "Nolla Games",
+        "year": 2020,
+        "genre": "Action"
+      }
+    ]
+  }
+}

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Game Quiz - Find Your Perfect Game!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: #0a0a0a;
+            color: #00ff00;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Scanline effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Animated background stars */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #00ff00;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #1a1a1a;
+            border: 4px solid #00ff00;
+            box-shadow:
+                0 0 20px rgba(0, 255, 0, 0.5),
+                inset 0 0 20px rgba(0, 255, 0, 0.1);
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+            image-rendering: pixelated;
+        }
+
+        /* Corner decorations */
+        .corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #00ff00;
+        }
+
+        .corner.top-left { top: -2px; left: -2px; }
+        .corner.top-right { top: -2px; right: -2px; }
+        .corner.bottom-left { bottom: -2px; left: -2px; }
+        .corner.bottom-right { bottom: -2px; right: -2px; }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff00ff;
+            text-shadow:
+                2px 2px 0 #00ffff,
+                4px 4px 0 rgba(0, 255, 255, 0.3);
+            line-height: 1.6;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .start-screen,
+        .quiz-screen,
+        .result-screen {
+            display: none;
+        }
+
+        .start-screen.active,
+        .quiz-screen.active,
+        .result-screen.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .intro-text {
+            font-size: 12px;
+            line-height: 2;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #00ffff;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 14px;
+            color: #0a0a0a;
+            background: #00ff00;
+            border: 4px solid #00ff00;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: #0a0a0a;
+            color: #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+            transform: scale(1.05);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn::before {
+            content: "▶ ";
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #0a0a0a;
+            border: 2px solid #00ff00;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff00, #00ffff);
+            width: 0%;
+            transition: width 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.1) 20px
+            );
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10px;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px #000;
+            z-index: 1;
+        }
+
+        .question {
+            margin-bottom: 30px;
+        }
+
+        .question h2 {
+            font-size: 16px;
+            color: #ffff00;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .answers {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .answer-btn {
+            padding: 20px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 11px;
+            color: #00ffff;
+            background: #0a0a0a;
+            border: 3px solid #00ffff;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .answer-btn:hover {
+            background: #00ffff;
+            color: #0a0a0a;
+            transform: translateX(10px);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+        }
+
+        .answer-btn::before {
+            content: "◆ ";
+            color: #ff00ff;
+        }
+
+        .answer-btn:hover::before {
+            content: "▶ ";
+        }
+
+        .result-screen h2 {
+            font-size: 20px;
+            color: #ff00ff;
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .game-card {
+            background: #0a0a0a;
+            border: 4px solid #ff00ff;
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+        }
+
+        .game-title {
+            font-size: 18px;
+            color: #ffff00;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .game-info {
+            font-size: 10px;
+            line-height: 2.2;
+            margin-bottom: 20px;
+            color: #00ffff;
+        }
+
+        .game-info strong {
+            color: #00ff00;
+        }
+
+        .game-description {
+            font-size: 11px;
+            line-height: 2;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #00ffff;
+        }
+
+        .recommendation-reason {
+            background: rgba(255, 0, 255, 0.1);
+            border: 2px solid #ff00ff;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .recommendation-reason h3 {
+            font-size: 12px;
+            color: #ff00ff;
+            margin-bottom: 15px;
+        }
+
+        .recommendation-reason p {
+            font-size: 10px;
+            line-height: 2.2;
+            color: #ffff00;
+        }
+
+        .match-score {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #00ff00;
+        }
+
+        .score-bar {
+            width: 200px;
+            height: 20px;
+            background: #0a0a0a;
+            border: 2px solid #00ff00;
+            margin-left: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .score-fill {
+            height: 100%;
+            background: #00ff00;
+            transition: width 1s;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+        }
+
+        .pixel-heart {
+            display: inline-block;
+            color: #ff0000;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 16px;
+            }
+
+            .intro-text,
+            .question h2 {
+                font-size: 10px;
+            }
+
+            .btn,
+            .answer-btn {
+                font-size: 9px;
+                padding: 15px;
+            }
+
+            .game-title {
+                font-size: 14px;
+            }
+
+            .game-info,
+            .recommendation-reason p {
+                font-size: 8px;
+            }
+        }
+
+        .blink {
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <!-- Start Screen -->
+        <div class="start-screen active" id="startScreen">
+            <h1>RETRO GAME<br>RECOMMENDER</h1>
+            <div class="intro-text">
+                <p>Can't decide what to play?</p>
+                <p>Answer 5 questions and we'll</p>
+                <p>find your perfect retro game!</p>
+                <p class="blink">▼ PRESS START ▼</p>
+            </div>
+            <button class="btn" id="startBtn">START QUIZ</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div class="quiz-screen" id="quizScreen">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+                <div class="progress-text" id="progressText">QUESTION 1 OF 5</div>
+            </div>
+            <div class="question" id="questionContainer"></div>
+        </div>
+
+        <!-- Result Screen -->
+        <div class="result-screen" id="resultScreen">
+            <h2>YOUR PERFECT GAME!</h2>
+            <div id="gameResult"></div>
+            <button class="btn" id="restartBtn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script>
+        let gameData = null;
+        let currentQuestion = 0;
+        let userAnswers = {};
+
+        // Generate stars
+        function generateStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Load game data
+        async function loadGameData() {
+            try {
+                const response = await fetch('games.json');
+                gameData = await response.json();
+            } catch (error) {
+                console.error('Error loading game data:', error);
+                alert('Error loading game data. Please refresh the page.');
+            }
+        }
+
+        // Show screen
+        function showScreen(screenId) {
+            document.querySelectorAll('.start-screen, .quiz-screen, .result-screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+        }
+
+        // Start quiz
+        function startQuiz() {
+            currentQuestion = 0;
+            userAnswers = {};
+            showScreen('quizScreen');
+            displayQuestion();
+        }
+
+        // Display question
+        function displayQuestion() {
+            const question = gameData.questions[currentQuestion];
+            const questionContainer = document.getElementById('questionContainer');
+
+            // Update progress
+            const progress = ((currentQuestion + 1) / gameData.questions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent =
+                `QUESTION ${currentQuestion + 1} OF ${gameData.questions.length}`;
+
+            // Build question HTML
+            let html = `
+                <h2>${question.question}</h2>
+                <div class="answers">
+            `;
+
+            question.answers.forEach((answer, index) => {
+                html += `
+                    <button class="answer-btn" onclick="selectAnswer('${answer.attribute}', '${answer.value}')">
+                        ${answer.text}
+                    </button>
+                `;
+            });
+
+            html += '</div>';
+            questionContainer.innerHTML = html;
+        }
+
+        // Select answer
+        function selectAnswer(attribute, value) {
+            userAnswers[attribute] = value;
+
+            currentQuestion++;
+
+            if (currentQuestion < gameData.questions.length) {
+                displayQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        // Calculate match score
+        function calculateMatchScore(game) {
+            let score = 0;
+            let maxScore = 0;
+            let matches = [];
+
+            for (const [attribute, value] of Object.entries(userAnswers)) {
+                maxScore++;
+                if (game[attribute] === value) {
+                    score++;
+                    matches.push({
+                        attribute: attribute,
+                        userValue: value,
+                        matched: true
+                    });
+                } else {
+                    matches.push({
+                        attribute: attribute,
+                        userValue: value,
+                        gameValue: game[attribute],
+                        matched: false
+                    });
+                }
+            }
+
+            return {
+                score: score,
+                maxScore: maxScore,
+                percentage: Math.round((score / maxScore) * 100),
+                matches: matches
+            };
+        }
+
+        // Get attribute display name
+        function getAttributeDisplayName(attribute) {
+            const names = {
+                'mood': 'Mood',
+                'sessionLength': 'Session Length',
+                'playStyle': 'Play Style',
+                'difficulty': 'Difficulty',
+                'genre': 'Genre'
+            };
+            return names[attribute] || attribute;
+        }
+
+        // Show results
+        function showResults() {
+            let bestMatch = null;
+            let bestScore = -1;
+            let matchDetails = null;
+
+            // Find best matching game
+            gameData.games.forEach(game => {
+                const result = calculateMatchScore(game);
+                if (result.score > bestScore) {
+                    bestScore = result.score;
+                    bestMatch = game;
+                    matchDetails = result;
+                }
+            });
+
+            // Build result HTML
+            const resultContainer = document.getElementById('gameResult');
+
+            let reasonText = generateRecommendationReason(bestMatch, matchDetails);
+
+            let html = `
+                <div class="game-card">
+                    <div class="game-title">${bestMatch.name}</div>
+
+                    <div class="match-score">
+                        <span>MATCH: ${matchDetails.percentage}%</span>
+                        <div class="score-bar">
+                            <div class="score-fill" style="width: ${matchDetails.percentage}%"></div>
+                        </div>
+                    </div>
+
+                    <div class="game-description">
+                        "${bestMatch.description}"
+                    </div>
+
+                    <div class="game-info">
+                        <p><strong>YEAR:</strong> ${bestMatch.year}</p>
+                        <p><strong>PLATFORM:</strong> ${bestMatch.platform}</p>
+                        <p><strong>GENRE:</strong> ${bestMatch.genre}</p>
+                        <p><strong>DIFFICULTY:</strong> ${bestMatch.difficulty}</p>
+                    </div>
+
+                    <div class="recommendation-reason">
+                        <h3><span class="pixel-heart">♥</span> WHY THIS GAME? <span class="pixel-heart">♥</span></h3>
+                        <p>${reasonText}</p>
+                    </div>
+                </div>
+            `;
+
+            resultContainer.innerHTML = html;
+            showScreen('resultScreen');
+        }
+
+        // Generate recommendation reason
+        function generateRecommendationReason(game, matchDetails) {
+            let reasons = [];
+
+            matchDetails.matches.forEach(match => {
+                if (match.matched) {
+                    const attributeName = getAttributeDisplayName(match.attribute);
+                    switch(match.attribute) {
+                        case 'mood':
+                            reasons.push(`It matches your ${match.userValue.toLowerCase()} mood perfectly`);
+                            break;
+                        case 'sessionLength':
+                            reasons.push(`Perfect for your ${match.userValue.toLowerCase()} gaming session`);
+                            break;
+                        case 'playStyle':
+                            reasons.push(`Features the ${match.userValue.toLowerCase()} gameplay you enjoy`);
+                            break;
+                        case 'difficulty':
+                            reasons.push(`Offers the ${match.userValue.toLowerCase()} challenge level you want`);
+                            break;
+                        case 'genre':
+                            reasons.push(`It's a ${match.userValue} game, exactly what you're looking for`);
+                            break;
+                    }
+                }
+            });
+
+            if (reasons.length === 0) {
+                return `While not a perfect match, ${game.name} is a beloved classic that offers a unique retro gaming experience. Sometimes the best games are the ones that surprise us!`;
+            }
+
+            let reasonText = `We picked ${game.name} because: `;
+
+            if (reasons.length === 1) {
+                reasonText += reasons[0] + '.';
+            } else if (reasons.length === 2) {
+                reasonText += reasons[0] + ' and ' + reasons[1] + '.';
+            } else {
+                reasonText += reasons.slice(0, -1).join(', ') + ', and ' + reasons[reasons.length - 1] + '.';
+            }
+
+            // Add extra flavor based on the game
+            if (matchDetails.percentage === 100) {
+                reasonText += ' It\'s a 100% PERFECT MATCH! This game was made for you!';
+            } else if (matchDetails.percentage >= 80) {
+                reasonText += ' It\'s an excellent match for what you\'re looking for!';
+            } else if (matchDetails.percentage >= 60) {
+                reasonText += ' It\'s a solid choice that should hit the spot!';
+            }
+
+            return reasonText;
+        }
+
+        // Event listeners
+        document.getElementById('startBtn').addEventListener('click', startQuiz);
+        document.getElementById('restartBtn').addEventListener('click', () => {
+            showScreen('startScreen');
+        });
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            generateStars();
+            loadGameData();
+        });
+    </script>
+</body>
+</html>

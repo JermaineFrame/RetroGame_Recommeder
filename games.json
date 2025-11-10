@@ -1,0 +1,211 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "name": "Super Mario Bros.",
+      "year": 1985,
+      "platform": "NES",
+      "genre": "Platformer",
+      "difficulty": "Medium",
+      "mood": "Fun",
+      "playStyle": "Action",
+      "sessionLength": "Short",
+      "description": "Jump through the Mushroom Kingdom to rescue Princess Peach!",
+      "tags": ["classic", "colorful", "mascot", "family-friendly"]
+    },
+    {
+      "id": 2,
+      "name": "The Legend of Zelda",
+      "year": 1986,
+      "platform": "NES",
+      "genre": "Adventure",
+      "difficulty": "Hard",
+      "mood": "Adventurous",
+      "playStyle": "Exploration",
+      "sessionLength": "Long",
+      "description": "Explore dungeons and solve puzzles to save Hyrule.",
+      "tags": ["exploration", "puzzle", "fantasy", "epic"]
+    },
+    {
+      "id": 3,
+      "name": "Pac-Man",
+      "year": 1980,
+      "platform": "Arcade",
+      "genre": "Arcade",
+      "difficulty": "Easy",
+      "mood": "Fun",
+      "playStyle": "Action",
+      "sessionLength": "Short",
+      "description": "Navigate mazes while eating pellets and avoiding ghosts.",
+      "tags": ["classic", "simple", "addictive", "iconic"]
+    },
+    {
+      "id": 4,
+      "name": "Tetris",
+      "year": 1984,
+      "platform": "Game Boy",
+      "genre": "Puzzle",
+      "difficulty": "Easy",
+      "mood": "Relaxed",
+      "playStyle": "Strategy",
+      "sessionLength": "Short",
+      "description": "Arrange falling blocks to clear lines in this timeless puzzle game.",
+      "tags": ["puzzle", "addictive", "simple", "timeless"]
+    },
+    {
+      "id": 5,
+      "name": "Metroid",
+      "year": 1986,
+      "platform": "NES",
+      "genre": "Action-Adventure",
+      "difficulty": "Hard",
+      "mood": "Mysterious",
+      "playStyle": "Exploration",
+      "sessionLength": "Long",
+      "description": "Explore alien worlds as bounty hunter Samus Aran.",
+      "tags": ["sci-fi", "atmospheric", "exploration", "challenging"]
+    },
+    {
+      "id": 6,
+      "name": "Street Fighter II",
+      "year": 1991,
+      "platform": "Arcade",
+      "genre": "Fighting",
+      "difficulty": "Medium",
+      "mood": "Competitive",
+      "playStyle": "Action",
+      "sessionLength": "Short",
+      "description": "Master special moves and fight your way to becoming the world warrior.",
+      "tags": ["competitive", "multiplayer", "skill-based", "iconic"]
+    },
+    {
+      "id": 7,
+      "name": "Sonic the Hedgehog",
+      "year": 1991,
+      "platform": "Genesis",
+      "genre": "Platformer",
+      "difficulty": "Medium",
+      "mood": "Fun",
+      "playStyle": "Action",
+      "sessionLength": "Medium",
+      "description": "Speed through levels collecting rings as the fastest hedgehog alive!",
+      "tags": ["fast-paced", "colorful", "mascot", "adrenaline"]
+    },
+    {
+      "id": 8,
+      "name": "Final Fantasy",
+      "year": 1987,
+      "platform": "NES",
+      "genre": "RPG",
+      "difficulty": "Hard",
+      "mood": "Epic",
+      "playStyle": "Strategy",
+      "sessionLength": "Long",
+      "description": "Embark on an epic quest with the Warriors of Light.",
+      "tags": ["story-rich", "turn-based", "fantasy", "epic"]
+    },
+    {
+      "id": 9,
+      "name": "Donkey Kong",
+      "year": 1981,
+      "platform": "Arcade",
+      "genre": "Platformer",
+      "difficulty": "Medium",
+      "mood": "Fun",
+      "playStyle": "Action",
+      "sessionLength": "Short",
+      "description": "Rescue the damsel from a giant ape by climbing girders and dodging barrels.",
+      "tags": ["classic", "simple", "arcade", "challenging"]
+    },
+    {
+      "id": 10,
+      "name": "Castlevania",
+      "year": 1986,
+      "platform": "NES",
+      "genre": "Action-Adventure",
+      "difficulty": "Hard",
+      "mood": "Dark",
+      "playStyle": "Action",
+      "sessionLength": "Medium",
+      "description": "Battle creatures of the night in Dracula's castle.",
+      "tags": ["gothic", "atmospheric", "challenging", "horror"]
+    },
+    {
+      "id": 11,
+      "name": "Mega Man 2",
+      "year": 1988,
+      "platform": "NES",
+      "genre": "Action-Platformer",
+      "difficulty": "Hard",
+      "mood": "Challenging",
+      "playStyle": "Action",
+      "sessionLength": "Medium",
+      "description": "Choose your path and defeat Robot Masters to save the world.",
+      "tags": ["challenging", "strategic", "boss-battles", "sci-fi"]
+    },
+    {
+      "id": 12,
+      "name": "Space Invaders",
+      "year": 1978,
+      "platform": "Arcade",
+      "genre": "Shooter",
+      "difficulty": "Easy",
+      "mood": "Fun",
+      "playStyle": "Action",
+      "sessionLength": "Short",
+      "description": "Defend Earth from descending alien invaders!",
+      "tags": ["classic", "simple", "addictive", "iconic"]
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What kind of mood are you in?",
+      "answers": [
+        {"text": "Fun and lighthearted", "attribute": "mood", "value": "Fun"},
+        {"text": "Ready for an epic adventure", "attribute": "mood", "value": "Epic"},
+        {"text": "Mysterious and atmospheric", "attribute": "mood", "value": "Dark"},
+        {"text": "Relaxed and casual", "attribute": "mood", "value": "Relaxed"},
+        {"text": "Competitive and intense", "attribute": "mood", "value": "Competitive"}
+      ]
+    },
+    {
+      "id": 2,
+      "question": "How much time do you have?",
+      "answers": [
+        {"text": "Just a few minutes", "attribute": "sessionLength", "value": "Short"},
+        {"text": "About 30-60 minutes", "attribute": "sessionLength", "value": "Medium"},
+        {"text": "Several hours - I'm settled in!", "attribute": "sessionLength", "value": "Long"}
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What's your preferred play style?",
+      "answers": [
+        {"text": "Fast-paced action!", "attribute": "playStyle", "value": "Action"},
+        {"text": "Thoughtful strategy", "attribute": "playStyle", "value": "Strategy"},
+        {"text": "Exploration and discovery", "attribute": "playStyle", "value": "Exploration"}
+      ]
+    },
+    {
+      "id": 4,
+      "question": "How challenging should it be?",
+      "answers": [
+        {"text": "Easy - I want to relax", "attribute": "difficulty", "value": "Easy"},
+        {"text": "Medium - Balanced fun", "attribute": "difficulty", "value": "Medium"},
+        {"text": "Hard - I love a challenge!", "attribute": "difficulty", "value": "Hard"}
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What genre sounds appealing?",
+      "answers": [
+        {"text": "Platformer - Jump and run!", "attribute": "genre", "value": "Platformer"},
+        {"text": "RPG - Story and character growth", "attribute": "genre", "value": "RPG"},
+        {"text": "Puzzle - Brain teasers", "attribute": "genre", "value": "Puzzle"},
+        {"text": "Fighting - Head-to-head combat", "attribute": "genre", "value": "Fighting"},
+        {"text": "Arcade - Classic high scores", "attribute": "genre", "value": "Arcade"}
+      ]
+    }
+  ]
+}
